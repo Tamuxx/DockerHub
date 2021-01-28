@@ -1,18 +1,20 @@
 # samba-server1
 
-This container publish a samba server with an authentication mounted on another samba remote server
+This Alpine Linux container publish a samba server with an authentication mounted on another samba remote server
 
 
-# Enviromment variables Groups:
+## Enviromment variables Groups:
 
-SMB_USER, SMB_PASS, SMB_SHARE refers to the credentials and share name to expose, SMB_USER always must be root
-SMB_USER_REMOTE, SMB_PASS_REMOTE, DOMAIN, SERVER, SHARE_NAME refers to the required information to connect the remote share within the container
+**SMB_USER, SMB_PASS, SMB_SHARE** refers to the credentials and share name to expose, SMB_USER always must be root
 
-# yml example:
+**SMB_USER_REMOTE, SMB_PASS_REMOTE, DOMAIN, SERVER, SHARE_NAME** refers to the required information to connect the remote share within the container
 
-version: '3.6'
-services:
-    smb_server1:
+
+## yml example:
+
+    version: '3.6'
+    services:
+      smb_server1:
         image: tamuxx/samba-server1
         container_name: smb_server1
         restart: always
